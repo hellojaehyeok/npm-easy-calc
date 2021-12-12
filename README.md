@@ -1,1 +1,1 @@
-# npm-easy-calc
+# Easy 
