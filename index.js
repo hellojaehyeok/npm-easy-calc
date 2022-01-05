@@ -38,12 +38,14 @@ function FontSize(elPx, totalPx){
     return (`font-size:calc(100vw*(${elPx}/${totalPx}));`);
 }
 
-function Margin(top, left, bottom, right, totalPx){
-    return (`margin:calc(100vw*(${top}/${totalPx})) calc(100vw*(${left}/${totalPx})) calc(100vw*(${bottom}/${totalPx})) calc(100vw*(${right}/${totalPx}));`);
-}
-
-function Margin2(topBottom, leftRight, totalPx){
-    return (`margin:calc(100vw*(${topBottom}/${totalPx})) calc(100vw*(${leftRight}/${totalPx}))`);
+function Margin(){
+    if(arguments.length == 5){
+        return (`margin:calc(100vw*(${arguments[0]}/${arguments[4]})) calc(100vw*(${arguments[1]}/${arguments[4]})) calc(100vw*(${arguments[2]}/${arguments[4]})) calc(100vw*(${arguments[3]}/${arguments[4]}));`);
+    }else if(arguments.length == 4){
+        return (`margin:calc(100vw*(${arguments[0]}/${arguments[3]})) ${arguments[1]=="auto"?`auto`:`calc(100vw*(${arguments[1]}/${arguments[3]}))`} calc(100vw*(${arguments[2]}/${arguments[3]}))`);
+    }else if(arguments.length == 3){
+        return (`margin:calc(100vw*(${arguments[0]}/${arguments[2]})) ${arguments[1]=="auto"?`auto`:`calc(100vw*(${arguments[1]}/${arguments[2]}))`}`);
+    }
 }
 
 function MT(elPx, totalPx){
@@ -62,12 +64,14 @@ function MR(elPx, totalPx){
     return (`margin-right:calc(100vw*(${elPx}/${totalPx}));`);
 }
 
-function Padding(top, left, bottom, right, totalPx){
-    return (`padding:calc(100vw*(${top}/${totalPx})) calc(100vw*(${left}/${totalPx})) calc(100vw*(${bottom}/${totalPx})) calc(100vw*(${right}/${totalPx}));`);
-}
-
-function Padding2(topBottom, leftRight, totalPx){
-    return (`padding:calc(100vw*(${topBottom}/${totalPx})) calc(100vw*(${leftRight}/${totalPx}))`);
+function Padding(){
+    if(arguments.length == 5){
+        return (`padding:calc(100vw*(${arguments[0]}/${arguments[4]})) calc(100vw*(${arguments[1]}/${arguments[4]})) calc(100vw*(${arguments[2]}/${arguments[4]})) calc(100vw*(${arguments[3]}/${arguments[4]}));`);
+    }else if(arguments.length == 4){
+        return (`margin:calc(100vw*(${arguments[0]}/${arguments[3]})) calc(100vw*(${arguments[1]}/${arguments[3]})) calc(100vw*(${arguments[2]}/${arguments[3]}))`);
+    }else if(arguments.length == 3){
+        return (`padding:calc(100vw*(${arguments[0]}/${arguments[2]})) calc(100vw*(${arguments[1]}/${arguments[2]}))`);
+    }
 }
 
 function PT(elPx, totalPx){
@@ -101,9 +105,7 @@ export {
     Right,
     FontSize,
     Margin,
-    Margin2,
     Padding,
-    Padding2,
     MT,
     MB,
     ML,
