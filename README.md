@@ -3,6 +3,11 @@
 반응형 스타일링에서 calc를 반복적으로 사용하게 되면 가독성이 떨어집니다.      
 이 라이브러리는 코드의 양을 줄이고 가독성을 높이기 위하여 만들었습니다.       
 저는 주로 React styled-components에서 사용합니다.       
+          
+사용하시면 깃허브에 ⭐ 한 번만 눌러주시면 감사하겠습니다!!      
+오류가 있거나 문의할게 있으면 Issues 혹은 이메일로 연락 부탁드립니다.     
+          
+<br /><br />
 
 ## 사용 예시
 ---
@@ -61,6 +66,9 @@ ${Media(mediaPxMb,[
 |PL(100, 428)|padding-left:calc(100vw * (100/428));|
 |PR(100, 428)|padding-right:calc(100vw * (100/428));|
 |LineH(100, 428)|line-height:calc(100vw * (100/428));|
+|BgColor(100, 428)|background-size:calc(100vw*(100/428));|
+|BgColor(100, 50, 428)|background-size:calc(100vw*(100/428)) calc(100vw*(50/428));|
+
 
 <br />
 

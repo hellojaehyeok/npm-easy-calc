@@ -94,6 +94,14 @@ function LineH(elPx, totalPx){
     return (`line-height:calc(100vw*(${elPx}/${totalPx}));`);
 }
 
+function BgColor(){
+    if(arguments.length == 3){
+        return (`background-size:calc(100vw*(${arguments[0]}/${arguments[2]})) calc(100vw*(${arguments[1]}/${arguments[2]}));`);
+    }else if(arguments.length == 2){
+        return (`background-size:calc(100vw*(${arguments[0]}/${arguments[1]}));`);
+    }
+}
+
 export {
     Media,
     Px,
@@ -115,4 +123,5 @@ export {
     PL,
     PR,
     LineH,
+    BgColor,
 };
